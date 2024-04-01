@@ -51,7 +51,10 @@ public class StringTest {
             }
         else{
         System.out.println("Both are Not same ");
+
         }
+
+        System.out.println(str_word1.length());
 
 
     }
