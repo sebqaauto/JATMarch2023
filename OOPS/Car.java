@@ -6,17 +6,20 @@ public class Car {
         System.out.println("Hi from the Car constructor");
     }
 
-    //Class Variables 
+    //Class Variables - Objects can't take a copy, it is common for all Objects, it can accessed without the help of Objects
     public static String car_Consortium;
 
 
-    //Instance Variables 
+    //Instance Variables - Each Object of the class will have copy of the Instance variables
     public String car_Name;
     public String car_Manu_Year;
     public String car_Color;
     public String wheelType;
     public String brakeType;
 
+    public void addAirBags(){
+
+    }
 
     public void wheel(String wheelType){
 

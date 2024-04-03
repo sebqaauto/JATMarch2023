@@ -40,5 +40,4 @@ public class TestArthimetic {
         System.out.println("The result is "+ result);
     }
     
-    
 }

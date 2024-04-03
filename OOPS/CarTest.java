@@ -31,7 +31,7 @@ public CarTest(){
     brakeType = " Brake Shoes";
 
 }
-static int counter =0;
+static int counter = 0;
 public CarTest(String carname, String carYear, String carColor, String wheeltype, String braketype){
     car_Name = carname;
     car_Manu_Year = carYear;
