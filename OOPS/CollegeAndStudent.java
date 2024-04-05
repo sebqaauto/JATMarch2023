@@ -31,6 +31,13 @@ public class CollegeAndStudent {
 
     }
 
+    //Copy Constructor
+    public CollegeAndStudent(CollegeAndStudent object){
+        this.student_name = object.student_name;
+        this.student_roll = object.student_roll;
+        this.dept = object.dept;
+    }
+
     public void getStudentName(){
         System.out.println("From the Getter method The name of the Student is "+student_name);
     }
@@ -48,8 +55,22 @@ public class CollegeAndStudent {
     CollegeAndStudent pant = new CollegeAndStudent("Pant R", "78787", "CSE");
     CollegeAndStudent rachin = new CollegeAndStudent("Rachin R", "98788", "MECH");
 
-    dhoni.getStudentName();
+    //Array of Objects 
+    CollegeAndStudent [] student = new CollegeAndStudent[2];
+    student[0] = dhoni;
+    student[1] = new CollegeAndStudent("Rohit Sharma", "5657", "CSE");
+
+    for (CollegeAndStudent collegeAndStudent : student) {
+        System.out.println("From the Array of Objects "+collegeAndStudent.student_name);
+    }
+    
+    CollegeAndStudent dhoni2 = new CollegeAndStudent(dhoni);
+
+    dhoni2.getStudentName();
+    dhoni2.student_name = "Dhoni M S - WKt";
     pant.getStudentRollNo();
+    dhoni.getStudentName();
+    dhoni2.getStudentName();
 
     String name;
     String rollNo;
