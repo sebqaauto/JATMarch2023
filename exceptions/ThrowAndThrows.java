@@ -2,6 +2,7 @@ package exceptions;
 
 import java.util.Scanner;
 
+
 public class ThrowAndThrows {
 
 static void checkUserName() throws ArithmeticException, StringIndexOutOfBoundsException{
@@ -16,6 +17,7 @@ static void checkUserName() throws ArithmeticException, StringIndexOutOfBoundsEx
     }
     else{
         System.out.println("The string is "+name);
+        name.replaceAll(name, name);
     }
 
 
@@ -23,6 +25,7 @@ static void checkUserName() throws ArithmeticException, StringIndexOutOfBoundsEx
 
     public static void main(String []args){
         checkUserName();
+       
 
     }
     
