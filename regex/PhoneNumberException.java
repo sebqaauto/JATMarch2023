@@ -12,57 +12,49 @@ public class PhoneNumberException extends Exception {
         super(expceptionMessage);
     }
 
-    
-    
     public PhoneNumberException(){
 
     }
    
-//Capture the phone number untill the user enters a valid 
-//If the user has exceeded 3 and on the 4th attempt throw him/her an exception
+/*  Capture the phone number untill the user enters a valid 
+    If the user has exceeded 3 and on the 4th attempt throw him/her an exception
+*/
+
     public static void getUserPhoneNumber() throws PhoneNumberException{
+        //Create the instance of user defined exception
         PhoneNumberException phoneNumberExceptionException = new PhoneNumberException("Invalid PhoneNumber and Exceeded 3 attempts");
+        //Initialise a counter to track the number of attempts
         int counter=0;
         boolean result;
         String phoneNumber;
-        do{ 
-        System.out.println("Please enter your phone name ");
-        Scanner scanner = new Scanner(System.in);
-        phoneNumber = scanner.nextLine();
-        //Valid phonne number should be having - 10 digits or + size can 10 to 13
-        //+919956787345
-         result = phoneNumber.matches("[+0-9]{10,13}");
-         counter++;
-            //Throw the user defined exception when the user exceeds 3 attempts
-            if(counter == 4){
-                throw phoneNumberExceptionException;
-            }
-            scanner.close();
-        }while(!result);
+             do{ 
+                     System.out.println("Please enter your phone name ");
+                     Scanner scanner = new Scanner(System.in);
+                     phoneNumber = scanner.nextLine();
+                     //Valid phonne number should be having - 10 digits or + size can 10 to 13
+                     //Sample Phone num +919956787345
+                     result = phoneNumber.matches("[+0-9]{10,13}");
+                     counter++;
+                     //Throw the user defined exception when the user exceeds 3 attempts
+                     if(counter == 4){
+                    throw phoneNumberExceptionException;
+                }
+             //Here the loop should countinue until, the user enters the valid phone number   
+            }while(!result);
+        //Print the phone number if it is valid 
         System.out.println("Thanks for entering valid phoneNumber "+phoneNumber);
 
     }
 
-    public static void main(String []args) {
-
-       
-    try {
+    public static void main(String []args) { 
+        try {
         getUserPhoneNumber();
-    } catch (PhoneNumberException e) {
-        
-        e.printStackTrace();
-        System.out.println(e.getMessage());
-        System.out.println(e.getMessage());
-    }
-       
-       
-       
-       
-       
-       
-
-
-    }
+        } catch (PhoneNumberException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
+        }                                          
+     }
 
     
 }
