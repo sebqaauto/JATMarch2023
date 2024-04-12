@@ -22,6 +22,11 @@ public class ListTest {
         }
         arrayList.addAll(arrayList2);
         arrayList.remove(0);
+        int [] intArray = new int[arrayList.size()];
+        for (Integer i : arrayList) {
+            intArray[i] = i;
+        }
+        
     }
 
     public void displayArray(){
